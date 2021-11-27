@@ -1,0 +1,79 @@
+
+<div class="accordion" >
+
+    <div class="buttons" toggle>
+        <button class="accordion-btn" (click)="showProfile()">
+            <span>
+                <i class="fas fa-address-card "></i>
+                 About
+            </span>
+             <!-- <i [ngClass]="sProfile? 'fas fa-chevron-up':'fas fa-chevron-down'" style="position: absolute;
+             left: 24%;"></i> -->
+            </button>
+    </div>
+    <!-- form -->
+    <!-- <form class="form-group" [formGroup]="myReativeForm" (ngSubmit)="onSubmit()" [class.display-none]="sProfile"> -->
+    <form >
+        <!-- <div class="profile-about">
+            {{about}}
+        </div> -->
+        <!-- <button class="edit-btn" (click)="updateProfile()"><i class="far fa-edit"></i></button> -->
+        <!-- <button class="edit-btn"><i class="far fa-edit"></i></button> -->
+        <div>
+            <label for="name">Name:</label>
+        </div>
+        <div class="form-input">
+            <input type="text" id="name" [readonly]="isEdit"  formControlName="name" autocomplete="off" value="Himanshu">
+            <div>
+                <small class="text-danger"
+                    *ngIf="!myReativeForm.get('name')?.valid && myReativeForm.get('name')?.touched">
+                    Please enter name.</small>
+            </div>
+
+        </div>
+        <div>
+            <label for="email">Email:</label>
+        </div>
+        <!-- <div class="form-input" [class.display-none]="sProfile"> -->
+        <div class="form-input">
+            <input type="text" id="email" [readonly]="isEdit"  formControlName="email" autocomplete="off" value="test@gmail.com">
+
+            <!-- <div>
+                <small class="text-danger"
+                    *ngIf="!myReativeForm.get('email')?.valid && myReativeForm.get('email')?.touched">
+                    Please enter valid Email.</small>
+            </div> -->
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+        </div>
+        <div class="form-input">
+            <input type="text" id="phone" [readonly]="isEdit"  formControlName="phone" autocomplete="off" value="545454554">
+            <!-- <div>
+                <small class="text-danger"
+                    *ngIf="!myReativeForm.get('phone')?.valid && myReativeForm.get('phone')?.touched">
+                    Please enter valid Phone no.</small>
+
+            </div> -->
+        </div>
+        <div>
+            <label for="address">Address:</label>
+        </div>
+        <div class="form-input">
+            <input type="text" id="address" [readonly]="isEdit" formControlName="website" autocomplete="off" value="gurugram">
+            <div>
+                <small class="text-danger"
+                    *ngIf="!myReativeForm.get('address')?.valid && myReativeForm.get('address')?.touched">
+
+                    Please enter address.</small>
+            </div>
+        </div>
+        <!-- <div>           
+            <button class="save-btn" type="submit" [class.display-none]="isEdit">Save</button>
+        </div> -->
+    </form>
+    <!-- <div class="form-input">
+            <button type="button" id="update-btn" disabled value="Save">save</button>
+        </div> -->
+
+</div>

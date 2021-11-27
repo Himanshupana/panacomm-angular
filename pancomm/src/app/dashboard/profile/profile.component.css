@@ -1,0 +1,151 @@
+/* 
+.container{
+    height: 100vh;
+    width: 100%;
+    color: #c6d9e0;
+    background-color: #303942;
+
+} */
+/* // .w-30{
+   
+//     
+
+// } */
+
+.form-group{
+    /* // width: 80%; */
+    margin: auto;
+}
+.setting-3-vdot{
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.profile-pic{
+    text-align: center;
+
+}
+.profile-about{
+    padding: 15px;
+}
+h3{
+    text-align: center;
+}
+hr{
+    background-color: #727a86;
+    color: #727a86;
+    border-block-color: #8e9bb0;
+}
+p{
+    padding: 0px 15px;
+    font-size: smaller;
+}
+.accordion{
+    width: 100%;
+    margin: auto;
+    display: block;
+    
+}
+form{
+    background-color: #2f2e6b;
+    padding: 30px 20px;
+    border-radius:0 0 10px 10px ;
+
+}
+.buttons{
+    display: flex;
+    /* // width: 80%;/ */
+    padding: 0px 0px;
+    justify-content: space-evenly;
+}
+.accordion-btn{
+    background-color: #2f2e6b;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+    width: 100%;
+    display: block;
+    font-size: large;
+}
+.accordion-btn:hover{
+    background-color: #262f36;   
+}
+.accordion-btn:focus{
+    background-color: #262f36;   
+}
+.save-btn{
+    background-color: #36404a;
+    border-radius: 5px 5px;
+    padding: 5px;
+    margin-top: 20px;
+    width: 60%;
+    margin: 20px auto auto auto;
+    display: block;
+    font-size: large;
+}
+.save-btn:hover{
+    background-color: #89004e;
+    color: white;}
+
+.edit-btn{
+    /* // border-radius: 5px; */
+    padding: 5px;
+    width: 15%;
+    display: block;
+    font-size: large;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: #262f36;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+button{
+    background-color: #36404a;
+    width: 100%;
+    color: #8e9bb0;
+    border: none;
+    
+}
+button:hover{
+    color: #89004e; 
+}
+.form-input
+{
+    width: 90%;
+    margin: auto;
+}
+input{
+    background-color: #2f2e6b;
+    width: 100%;
+    border: none;
+    /* // margin: auto; */
+    color: white;
+    padding: 5px;
+    /* // border-radius: 5px; */
+}
+input:focus-visible{
+    border: none;
+    outline: none;
+    background-color: #5b6269;
+}
+input.ng-touched.ng-invalid{
+    border: 1px solid rgb(214, 129, 129);
+}
+.text-danger{
+    color: rgb(214, 129, 129);
+}
+label{
+    font-size: small;
+    color: #96a0aa;
+}
+.fa-check-circle:before {
+    content: "\f058";
+    color: green;
+}
+.display-none{
+    display: none;
+}

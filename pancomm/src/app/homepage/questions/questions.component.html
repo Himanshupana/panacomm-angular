@@ -1,0 +1,13 @@
+
+<div class="que-container" *ngFor="let question of questions;">
+<!-- <div class="que-container" *ngFor="let question of questions;let ind=question.queID"> -->
+ <h3>Question:</h3>   
+ <div class="question-desc">
+     <p>{{question.questions}}</p>
+     <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptate earum nulla, exercitationem distinctio fugit alias itaque at facilis in, atque a placeat, quae quibusdam voluptates ipsa sapiente odit animi!</p> -->
+    </div>
+    <div class="ans-container">
+        <app-answers [index]='question.queID'></app-answers>
+        <!-- <app-answers></app-answers> -->p
+    </div>
+</div>
