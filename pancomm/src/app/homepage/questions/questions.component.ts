@@ -15,7 +15,9 @@ export class QuestionsComponent implements OnInit {
     this._question.allQuestions().subscribe((data)=>{
       console.log(data);
       this.questions = data
-      console.log(this.questions[2].questions);      
+      // this.questions.sort((a:any,b:any) =>  a.uid-b.uid);
+      
+      // console.log(this.questions[2].questions);      
     })
   }
   

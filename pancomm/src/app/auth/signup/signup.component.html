@@ -30,7 +30,7 @@
                             <div class="input_field">
                                 <!-- <i class="fa fa-user"></i> -->
                                 <input type="text" formControlName="email"
-                                    placeholder="admin@themes.com" ngModel>
+                                    placeholder="admin@panamoure.com" ngModel>
                             </div>
                             <div class="error"
                                 *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched">
@@ -72,15 +72,16 @@
                 <div class="app-in">
                     <p>Signup via</p>
                     <div class="social-links">
-                        <a href="www.google.com"><img src="../../assets/img/google-play-badge.png" width="100" alt=""></a>
-                        <a href="##"><img src="../../assets/img/app-store-png-logo-33107-256x256 .png" width="87" alt=""></a>
+                        <!-- <a href="www.google.com"><img src="../../assets/img/google-play-badge.png" width="100" alt=""></a>
+                        <a href="##"><img src="../../assets/img/app-store-png-logo-33107-256x256 .png" width="87" alt=""></a> -->
+                        <a routerLink="/log-in">Log in</a>
                     </div>
                 </div>
             </div>
-            <div class='footer'>
+            <!-- <div class='footer'>
                 <div><a href="##">FAQ</a></div>-
                 <div><a href="##">Privacy policy</a></div>-
                 <div><a href="##">Contact us</a></div>
-            </div>
+            </div> -->
 
         </div>
