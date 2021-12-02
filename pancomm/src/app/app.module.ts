@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { QuestionsComponent } from './homepage/questions/questions.component';
 import { AnswersComponent } from './homepage/answers/answers.component';
+import { DynamicFormComponent } from './dynamicform/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AnswersComponent } from './homepage/answers/answers.component';
     HomepageComponent,
     DashboardComponent,
     QuestionsComponent,
-    AnswersComponent
+    AnswersComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,

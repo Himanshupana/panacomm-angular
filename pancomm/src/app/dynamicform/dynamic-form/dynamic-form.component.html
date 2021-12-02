@@ -1,0 +1,20 @@
+<form novalidate [formGroup]='form'>
+    <div *ngFor="let prop of objectProps">
+        <label [attr.for]="prop.key">{{prop.label}}</label>
+        <div [ngSwitch] = 'prop.type'>
+            <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
+            <input *ngSwitchCase="'email'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
+            <!-- <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
+            <input *ngSwitchCase="'password'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
+            <div *ngSwitchCase="'select'">
+                <select [formControlName]='prop.key'>okok
+                    <option *ngFor='let option of prop.options' [value]=option.value>
+                        {{option.label}}
+                    </option>
+                </select>
+            </div>
+            <!-- <input *ngSwitchCase="'select'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
+            <!-- <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
+        </div>
+    </div>
+</form>

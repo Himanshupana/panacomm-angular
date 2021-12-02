@@ -45,7 +45,7 @@
             vertical-align: top;
             /* max-width: 425px; */
             border-radius: 0 0 3px 3px;
-            box-shadow: 0px 5px 4px 0px #b9cd45;
+            box-shadow: 0px 5px 4px 0px #072b3a;
         }
 
         span#main-name {
@@ -150,4 +150,11 @@
 
         .danger {
             color: #f7465d;
+        }
+        .button{
+            padding: 4px 40px;
+            margin-top: 10px;
+        }
+        .gap{
+            height: 50px;
         }

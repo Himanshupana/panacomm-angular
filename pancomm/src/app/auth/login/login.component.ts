@@ -26,28 +26,32 @@ export class LoginComponent implements OnInit {
   //constructor( private route:Router) {
   //}
   constructor(
-    private _userService: AuthService
-    // private router: Router
+    private _userService: AuthService,
+    private router: Router
   ) { }
   onSubmit() {
     this._userService.loginUser(this.requiredForm.value).subscribe(data => {
-      console.log("subData::", data);
+      console.log("subData::", data.status);
+      if(data.status==200){
+        this.router.navigate(['dashboard'])
+      }
+
     });
       // this.childData= data;
       // console.log(this.user.userInfo.email);
 
       
       // if (data.is_active == true) {
-        //   this.router.navigate(['/dashboard']);
-        //   localStorage.setItem("userData", JSON.stringify(data))
-        //   localStorage.setItem("token", data.token)
-        //   this.childToParent.emit(data)
-        // }
-        // else {
-          //   // window.location.href = "/login";
-          //   console.log("error");
+      //     this.router.navigate(['/dashboard']);
+      //     localStorage.setItem("userData", JSON.stringify(data))
+      //     localStorage.setItem("token", data.token)
+      //     this.childToParent.emit(data)
+      //   }
+      //   else {
+      //       // window.location.href = "/login";
+      //       console.log("error");
           
-          // }
+      //     }
           
           // }
           // )
