@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // @Output() childToParent = new EventEmitter();
+  @Output() dataToParent:any;
   // childData:any = "ok";
 
   requiredForm = new FormGroup({
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     this._userService.loginUser(this.requiredForm.value).subscribe(data => {
       console.log("subData::", data.data[0].email);
       if(data.status==200){
+        this.dataToParent = data.data
         localStorage.setItem('currentUser',`${data.data[0].email}`)
         this.router.navigate(['dashboard'])
       }
