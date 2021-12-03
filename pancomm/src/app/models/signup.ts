@@ -9,23 +9,24 @@ export const signup = {
     },
     email :{
         label: "email",
-        placeholder: "user@panamoure.com",
+        value: "user@panaure.com",
         type: "email",
         validation :{
-            required:true
+            required:true,
+            pattern :"^[a-z0-9._%+-]+@panamoure+\.com$"
         }
     },
     phone :{
         label: "phone",
-        placeholder: "Phone no",
+        value: "Phone no",
         type: "text",
         validation :{
             required:true
         }
     },
     password :{
-        label: "Password",
-        placeholder: "********",
+        label: "password",
+        value: "********",
         type: "password",
         validation :{
             required:true
@@ -33,15 +34,15 @@ export const signup = {
     },
     designatin :{
         label: "Designation",
-        placeholder: "software engineer",
+        value: "software engineer",
         type: "text",
         validation :{
             required:true
         }
     },
     department :{
-        label: "Departmet",
-        placeholder: "i.e. development",
+        label: "Designation",
+        value: "development",
         type: "select",
         options:[
             {label:'(choose one)', value:''},

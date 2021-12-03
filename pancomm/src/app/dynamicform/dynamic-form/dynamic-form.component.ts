@@ -14,30 +14,48 @@ export class DynamicFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.objectProps = Object.keys(this.dataObject).map((props) => {
-      return Object.assign({}, { key: props }, this.dataObject[props])
+    this.objectProps = Object.keys(this.dataObject)
+    .map(prop => {
+      return Object.assign({}, { key: prop }, this.dataObject[prop])
     })
-    const formGroup:any ={}
-    for(let props of Object.keys(this.dataObject)){
-      formGroup[props]= new FormControl(this.dataObject[props].value || "", this.mapValidattors(this.dataObject[props].validator))
+    const formGroup: any = {}
+    for (let property of Object.keys(this.dataObject)) {
+      formGroup[property] = new FormControl(this.dataObject[property].value || '', this.mapValidators(this.dataObject[property].validation));
     }
-    this.form =  new FormGroup(formGroup)
-
+    this.form = new FormGroup(formGroup);
   }
 
-  mapValidattors(validators: any) {
-    const formValidator = []
+  mapValidators(validators: any) {
+    // console.log("vv",validators);
+    
+    const formValidators = [];
     if (validators) {
       for (const validation of Object.keys(validators)) {
+        // console.log(validation);
         if (validation === 'required') {
-          formValidator.push(Validators.required)
-        } else if (validation === 'min') {
-          formValidator.push(Validators.min(validators[validation]))
-
+          formValidators.push(Validators.required);
+          
+        }
+         else if (validation === 'min') {
+          formValidators.push(Validators.min(validators[validation]))
+        }
+         else if (validation === 'pattern') {
+          formValidators.push(Validators.pattern(validators[validation]))
         }
       }
-    }
-    return formValidator
+    } 
+    // console.log("arr",formValidators);  
+    return formValidators
+  }
+
+  
+  onSubmit(form:any){
+
+    console.log(form.get(this.objectProps[2].key));
+    
+    console.log(this.objectProps);
+    console.log("okok",this.dataObject);
+    
   }
 
 }

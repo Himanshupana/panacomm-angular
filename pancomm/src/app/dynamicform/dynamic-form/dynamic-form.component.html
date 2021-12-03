@@ -4,7 +4,6 @@
         <div [ngSwitch] = 'prop.type'>
             <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
             <input *ngSwitchCase="'email'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
-            <!-- <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
             <input *ngSwitchCase="'password'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'>
             <div *ngSwitchCase="'select'">
                 <select [formControlName]='prop.key'>okok
@@ -13,8 +12,18 @@
                     </option>
                 </select>
             </div>
-            <!-- <input *ngSwitchCase="'select'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
-            <!-- <input *ngSwitchCase="'text'" [formControlName]='prop.key' [id]='prop.key' [type]='prop.type' [placeholder]='prop.placeholder'> -->
         </div>
+        <div class="error" *ngIf="form.get(prop.key).invalid && (form.get(prop.key).dirty || form.get(prop.key).touched)">
+            <div *ngIf="form.get(prop.key).errors.required">
+              {{ prop.label }} is required.
+            </div>
+            <div *ngIf="form.get(prop.key).errors.pattern">
+              {{ prop.label }}is required.
+            </div>
+          </div>
     </div>
+
+    <p>
+        <button type="submit" (click)='onSubmit(form)'>Submit</button>
+    </p>
 </form>
