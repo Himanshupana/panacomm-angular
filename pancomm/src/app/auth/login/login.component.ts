@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
   ) { }
   onSubmit() {
     this._userService.loginUser(this.requiredForm.value).subscribe(data => {
-      console.log("subData::", data.status);
+      console.log("subData::", data.data[0].email);
       if(data.status==200){
+        localStorage.setItem('currentUser',`${data.data[0].email}`)
         this.router.navigate(['dashboard'])
       }
 

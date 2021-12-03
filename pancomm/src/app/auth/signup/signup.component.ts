@@ -16,30 +16,30 @@ export class SignupComponent implements OnInit {
     this.signupModel = signup
    }
 
-  // requiredForm = new FormGroup({
-  //   name: new FormControl(''),
-  //   email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@panamoure+\.com$")]),
-  //   password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
-  //   job_profile: new FormControl(''),
-  //   department: new FormControl('')
-  // });
+  requiredForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@panamoure+\.com$")]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+    job_profile: new FormControl(''),
+    department: new FormControl('')
+  });
 
   ngOnInit(): void {
   }
 
-  // onSubmit(){
-  //   console.log(this.requiredForm.value);
-  //   this._userService.registerUser(this.requiredForm.value).subscribe(data => {
-  //     console.log("subData::", data);
-  //     if (data.status==200) {
-  //       this.router.navigate(['/log-in'])
-  //     }
-  //     else{
-  //       console.log('error');
+  onSubmit(){
+    console.log(this.requiredForm.value);
+    this._userService.registerUser(this.requiredForm.value).subscribe(data => {
+      console.log("subData::", data);
+      if (data.status==200) {
+        this.router.navigate(['/log-in'])
+      }
+      else{
+        console.log('error');
         
-  //     }
-  //   });
-  // }
+      }
+    });
+  }
 
 }
 

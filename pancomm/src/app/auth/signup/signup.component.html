@@ -1,1 +1,75 @@
-<app-dynamic-form [dataObject]='signupModel'></app-dynamic-form>
+<div class="main">
+    <div class='header'>
+        <div class="logo">
+            <img src="../../assets/img/panamoure-logo.png" alt="" srcset="" width="200px">
+            <!-- <span id="main-name">Atlas</span> -->
+        </div>
+        <!-- <div class="links">
+            <a href="##"><i class="fab fa-facebook"></i></a>
+            <a href="##"><i class="fab fa-instagram"></i></a>
+        </div> -->
+
+    </div>
+    <div class="center">
+        <div class="reset-img">
+            <!-- <img src="./img/password-svgrepo-com.svg" alt="" srcset="" width="100px"> -->
+
+            <div class="desc">
+                <h3>Sign up</h3>
+            </div>
+        </div>
+        <div class="link-desc">
+            <form [formGroup]="requiredForm" (ngSubmit)="onSubmit()">
+                <div class="form">
+                    <!-- <div class="label"><label>Name</label></div> -->
+                    <div class="input_field">
+                        <input type="text" formControlName="name" placeholder="name" ngModel>
+                    </div>
+                    <!-- <div class="label"><label>Email</label></div> -->
+                    <div class="input_field">
+                        <!-- <i class="fa fa-user"></i> -->
+                        <input type="text" formControlName="email" placeholder="admin@themes.com" ngModel>
+                    </div>
+                    <div class="error"
+                        *ngIf="requiredForm.controls['email'].invalid && requiredForm.controls['email'].touched">
+                        <p> Email required with format</p>
+                    </div>
+                    <!-- <div class="label"><label>Job Profile</label></div> -->
+                    <div class="input_field">
+                        <input type="text" formControlName="job_profile" placeholder="Job profile" ngModel>
+                    </div>
+                    <!-- <div class="label"><label>Department</label></div> -->
+                    <div class="input_field">
+                        <input type="text" formControlName="department" placeholder="department" ngModel>
+                    </div>
+                    <!-- <div class="label"><label>Password</label></div> -->
+                    <div class="input_field">
+                        <!-- <i class="fa fa-lock"></i> -->
+                        <input type="password" formControlName="password" placeholder="......" ngModel>
+                    </div>
+                    <div class="error"
+                        *ngIf="requiredForm.controls['password'].invalid && requiredForm.controls['password'].touched">
+                        <p>please enter valid password </p>
+                    </div>
+                    <!-- <div class="checkbox">
+                        <input type="checkbox"><span class="span"> Remember me </span>
+                        <button routerLink="/forget">Forgot password</button>
+                    </div> -->
+                    <div [ngClass]="requiredForm.valid?'':'disabled'" class="btn">
+                        <button [disabled]="!requiredForm.valid">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <p>Already have an account? <a routerLink="/log-in">Sign up</a></p>
+        <!-- <a routerLink="/sign-up">Sign up</a> -->
+        <div class="gap">
+
+        </div>
+    </div>
+    <div class='footer'>
+
+    </div>
+
+</div>

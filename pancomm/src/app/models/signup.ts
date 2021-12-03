@@ -32,8 +32,8 @@ export const signup = {
             required:true
         }
     },
-    designatin :{
-        label: "Designation",
+    job_profile :{
+        label: "Job Profile",
         value: "software engineer",
         type: "text",
         validation :{
@@ -41,7 +41,7 @@ export const signup = {
         }
     },
     department :{
-        label: "Designation",
+        label: "Department",
         value: "development",
         type: "select",
         options:[
